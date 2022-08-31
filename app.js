@@ -31,6 +31,7 @@ function changeSong(i) {
 
 next.onclick = (e) => {
     i++
+    if(i==songList.length) i=0
     changeSong(i)
     setTimeout(function(){
         duration()
@@ -39,6 +40,7 @@ next.onclick = (e) => {
 
 prev.onclick = (e) => {
     i--
+    if(i<0) i=songList.length-1
     changeSong(i)
     setTimeout(function(){
         duration()
