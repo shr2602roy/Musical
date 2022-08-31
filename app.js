@@ -26,19 +26,23 @@ function changeSong(i) {
     audio.src = songList[i].filePath
     audio.currentTime = 0
     audio.play()
-    console.log(audio.duration)
+    // console.log(audio.duration)
 }
 
 next.onclick = (e) => {
     i++
     changeSong(i)
-    // duration()
+    setTimeout(function(){
+        duration()
+    }, 100);
 };
 
 prev.onclick = (e) => {
     i--
     changeSong(i)
-    // duration()
+    setTimeout(function(){
+        duration()
+    }, 100);
 };
 
 //PLAY-PAUSE BUTTONS
@@ -79,7 +83,7 @@ function duration() {
 audio.ontimeupdate = (e) => {
     audioSeek.value = ((audio.currentTime) / (audio.duration)) * 100
     updateTime()
-    // console.log(audio.currentTime)
+    // console.log(audio.duration)
 };
 
 //CHANGE SEEKBAR
@@ -88,9 +92,6 @@ audioSeek.onchange = (e) => {
     // console.log('seeked')
 };
 
-audio.onchange = (e) => {
-    duration()
-}
 audio.onended = (e) => {
     changeSong(i++)
 }
