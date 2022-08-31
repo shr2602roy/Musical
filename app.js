@@ -35,7 +35,7 @@ next.onclick = (e) => {
     changeSong(i)
     setTimeout(function(){
         duration()
-    }, 1000);
+    }, 2000);
 };
 
 prev.onclick = (e) => {
@@ -44,7 +44,7 @@ prev.onclick = (e) => {
     changeSong(i)
     setTimeout(function(){
         duration()
-    }, 1000);
+    }, 2000);
 };
 
 //PLAY-PAUSE BUTTONS
