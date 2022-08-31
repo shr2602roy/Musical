@@ -29,6 +29,10 @@ function changeSong(i) {
     // console.log(audio.duration)
 }
 
+audio.onended = (e) => {
+    changeSong(i++)
+};
+
 next.onclick = (e) => {
     i++
     if(i==songList.length) i=0
@@ -97,3 +101,45 @@ audioSeek.onchange = (e) => {
 audio.onended = (e) => {
     changeSong(i++)
 }
+
+//VOLUME
+let vol = document.getElementById('volumeChange')
+let volSlider = document.getElementById('volSlider')
+vol.onchange = (e) => {
+    if(vol.value > 30 && volSlider.classList.contains('fa-volume-low')) {
+        volSlider.classList.remove('fa-volume-low')
+        volSlider.classList.add('fa-volume-high') 
+    } else if(vol.value > 30 && volSlider.classList.contains('fa-volume-xmark')) {
+        volSlider.classList.remove('fa-volume-xmark')
+        volSlider.classList.add('fa-volume-high') 
+    } else if(vol.value == 0 && volSlider.classList.contains('fa-volume-low')) {
+        volSlider.classList.remove('fa-volume-low')
+        volSlider.classList.add('fa-volume-xmark') 
+    } else if(vol.value == 0 && volSlider.classList.contains('fa-volume-high')){
+        volSlider.classList.remove('fa-volume-high')
+        volSlider.classList.add('fa-volume-xmark') 
+    } else if(vol.value <= 30 && volSlider.classList.contains('fa-volume-xmark')){
+        volSlider.classList.remove('fa-volume-xmark')
+        volSlider.classList.add('fa-volume-low') 
+    } else if(vol.value <= 30 && volSlider.classList.contains('fa-volume-high')){
+        volSlider.classList.remove('fa-volume-high')
+        volSlider.classList.add('fa-volume-low') 
+    } 
+    audio.volume = vol.value/100
+};
+
+//REPEAT
+let repeat = document.getElementById('repeat')
+let r=0
+repeat.onclick  = (e) => {
+    if(r==0) {
+        repeat.style.color = "black"
+        audio.loop = true
+        r=1
+    }
+    else {
+        repeat.style.color = "grey"
+        audio.loop = false
+        r=0
+    }
+};

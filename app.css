@@ -71,7 +71,7 @@ header {
   } */
 .container-fluid .buttons {
   position: absolute;
-  top: 28%;
+  top: 26.5%;
   left: 25.5%;
   display: none;
 }
@@ -129,6 +129,35 @@ header {
 .time {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
+  margin-top: 8px;
   justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.volume {
+  justify-content: space-between;
+  align-items: center;
+}
+
+#volumeChange {
+  border-radius: 10px;
+  background: rgb(141, 138, 138);
+  position: relative;
+  width: 25%;
+  height: 10%;
+}
+
+#volSlider {
+  color: black;
+}
+
+#repeat {
+  color: grey;
 }/*# sourceMappingURL=app.css.map */
