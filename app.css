@@ -1,0 +1,134 @@
+html, body {
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background-size: cover;
+}
+
+.music-box {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(174, 0, 255);
+  position: relative;
+}
+
+.card img {
+  border-radius: inherit;
+  position: relative;
+  height: 18rem;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: fadeout;
+          animation-name: fadeout;
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    filter: brightness(0.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    filter: brightness(0.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+.card :hover {
+  filter: brightness(50%);
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+}
+
+/* .container-fluid {
+    position: relative;
+    width: 50%;
+  } */
+.container-fluid .buttons {
+  position: absolute;
+  top: 30%;
+  left: 25.5%;
+  display: none;
+}
+
+.container-fluid .card:hover .buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-solid {
+  color: rgb(190, 178, 178);
+  margin: 15px;
+  font-size: xx-large;
+}
+
+.fa-solid:hover {
+  color: white;
+  -webkit-animation-name: none;
+          animation-name: none;
+  transition: none;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(0.5);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(0.5);
+  }
+}
+#music-box {
+  border-radius: 3rem;
+  box-shadow: 12px 8px 9px rgb(0, 0, 0);
+}
+
+.container-fluid #audioSeek {
+  -webkit-appearance: none;
+  border-radius: 10px;
+  background: rgb(81, 81, 82);
+  position: relative;
+  width: 85%;
+  height: 30%;
+  margin: 2px;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  justify-content: center;
+}/*# sourceMappingURL=app.css.map */
